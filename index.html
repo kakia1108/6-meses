@@ -36,7 +36,25 @@ display:none;
 grid-template-columns:repeat(4,1fr);
 gap:15px;
 width:80%;
+max-width:1000px; /* limite para ecrãs grandes */
 margin:50px auto;
+}
+
+/* RESPONSIVO PARA TELEMÓVEL */
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns:repeat(2,1fr); /* 2 colunas no telemóvel */
+    width:90%;
+    gap:10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns:1fr; /* 1 coluna em telemóveis muito pequenos */
+    width:95%;
+    gap:8px;
+  }
 }
 
 .gallery img{
