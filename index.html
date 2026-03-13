@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>6 Meses Juntas❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg, #c57eee, #e3c8f5);
+    color:white;
+}
+
+.container{
+    margin-top:80px;
+}
+
+h1{
+    font-size:3em;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    background:rgb(200, 116, 255);
+    color:#ffffff;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.gallery{
+    display:none;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+    width:80%;
+    margin:50px auto;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 8px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Feliz 6 Meses ❤️</h1>
+
+<p>Olá amor, já à algum tempo que andava a pensar em fazer algo assim para ti mas queria esperar uma data especial paar ter mais impacto.</p>
+
+<p>Feliz 6 meses. Fazes-me tão mas tão feliz todos os dias que as vezes acho que ainda estou a sonhar mas se sim espero nunca acordar deste sonho. </p>
+<p>Amo-te mais do que alguma vez presentes poderão mostrar ou palavras poderão explicar.</p>
+<p>É contigo que quero casar Carolina Sofia e so vou descansar no dia em formos so nos no nosso cantinho.</p>
+<p>Obrigada por teres aparecido na minha vida exatamente no momento que mais precisava mas tambem no que menos esperava</p>
+
+<p>
+Preparei uma pequena surpresa para recordar alguns dos nossos momentos juntas.
+</p>
+
+<button onclick="abrirMuseu()">Abrir o Museu 📸</button>
+
+</div>
+
+<div id="museu" class="gallery">
+
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+<img src="foto4.jpeg">
+<img src="foto5.jpeg">
+<img src="foto6.jpeg">
+<img src="foto7.jpeg">
+<img src="foto8.jpeg">
+<img src="foto9.jpeg">
+<img src="foto10.jpeg">
+<img src="foto11.jpeg">
+<img src="foto12.jpeg">
+<img src="foto13.jpeg">
+<img src="foto14.jpeg">
+<img src="foto15.jpeg">
+<img src="foto16.jpeg">
+
+</div>
+
+<script>
+
+function abrirMuseu(){
+    document.getElementById("museu").style.display="grid";
+}
+
+</script>
+
+</body>
+</html>
