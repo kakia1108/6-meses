@@ -2,58 +2,112 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>6 Meses Juntas❤️</title>
+<title>6 Meses ❤️</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    text-align:center;
-    background: linear-gradient(135deg, #c57eee, #e3c8f5);
-    color:white;
+margin:0;
+font-family:Arial;
+font-size: 20px;
+text-align:center;
+background: linear-gradient(135deg, #c57eee, #e3c8f5);
+color:white;
+overflow-x:hidden;
 }
 
 .container{
-    margin-top:80px;
-}
-
-h1{
-    font-size:3em;
+margin-top:80px;
 }
 
 button{
-    margin-top:30px;
-    padding:15px 30px;
-    font-size:20px;
-    border:none;
-    border-radius:10px;
-    background:rgb(200, 116, 255);
-    color:#ffffff;
-    cursor:pointer;
-}
-
-button:hover{
-    transform:scale(1.1);
+margin-top:30px;
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:rgb(200, 116, 255);
+color:#ffffff;
+cursor:pointer;
 }
 
 .gallery{
-    display:none;
-    grid-template-columns: repeat(4,1fr);
-    gap:15px;
-    width:80%;
-    margin:50px auto;
+display:none;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+width:80%;
+margin:50px auto;
 }
 
 .gallery img{
-    width:100%;
-    border-radius:15px;
-    box-shadow:0 8px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
+width:100%;
+border-radius:15px;
+box-shadow:0 8px 15px rgba(0,0,0,0.3);
+cursor:pointer;
+transition:transform 0.3s;
 }
 
 .gallery img:hover{
-    transform:scale(1.08);
+transform:scale(1.05);
+}
+
+/* FOTO GRANDE */
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+#lightbox img{
+max-width:80%;
+max-height:70%;
+border-radius:20px;
+}
+
+#mensagemFoto{
+margin-top:20px;
+font-size:22px;
+}
+
+/* ESTRELAS */
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2;}
+50%{opacity:1;}
+100%{opacity:0.2;}
+}
+
+/* CORAÇÕES */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+opacity:0;
+}
 }
 
 </style>
@@ -65,46 +119,156 @@ button:hover{
 
 <h1>Feliz 6 Meses ❤️</h1>
 
-<p>Olá amor, já à algum tempo que andava a pensar em fazer algo assim para ti mas queria esperar uma data especial paar ter mais impacto.</p>
-
-<p>Feliz 6 meses. Fazes-me tão mas tão feliz todos os dias que as vezes acho que ainda estou a sonhar mas se sim espero nunca acordar deste sonho. </p>
-<p>Amo-te mais do que alguma vez presentes poderão mostrar ou palavras poderão explicar.</p>
-<p>É contigo que quero casar Carolina Sofia e so vou descansar no dia em formos so nos no nosso cantinho.</p>
+<p>Olá amor, já à algum tempo que andava a pensar em fazer algo assim para ti mas queria esperar uma data especial para ter mais impacto.</p>
+<p>Fazes-me tão mas tão feliz todos os dias que as vezes acho que ainda estou a sonhar mas se sim espero nunca acordar deste sonho. </p>
+<p>É contigo que quero casar Carolina Sofia e só vou descansar no dia em formos so nos no nosso cantinho.</p>
 <p>Obrigada por teres aparecido na minha vida exatamente no momento que mais precisava mas tambem no que menos esperava</p>
+<p>Obrigada seres tudo o que sempre desejei em alguém mas que nunca achei que fosse possivel</p>
+<p>Obrigada por toda a paciência e amor que me tens dado.</p>
+<p>Amo-te mais do que alguma vez presentes poderão mostrar ou palavras poderão explicar.</p>
+<p>Preparei uma pequena surpresa para recordar alguns dos nossos momentos juntas.</p>
 
-<p>
-Preparei uma pequena surpresa para recordar alguns dos nossos momentos juntas.
-</p>
+<div id="contador"></div>
 
-<button onclick="abrirMuseu()">Abrir o Museu 📸</button>
+<button onclick="abrirMuseu()">Ver as nossas memórias ❤️</button>
 
 </div>
 
+<p id="mensagemMuseu" style="display:none; font-size:24px; margin-top:40px;">
+✨ Clica nas fotos para veres uma pequena mensagem ✨
+</p>
+
 <div id="museu" class="gallery">
 
-<img src="foto1.jpeg">
-<img src="foto2.jpeg">
-<img src="foto3.jpeg">
-<img src="foto4.jpeg">
-<img src="foto5.jpeg">
-<img src="foto6.jpeg">
-<img src="foto7.jpeg">
-<img src="foto8.jpeg">
-<img src="foto9.jpeg">
-<img src="foto10.jpeg">
-<img src="foto11.jpeg">
-<img src="foto12.jpeg">
-<img src="foto13.jpeg">
-<img src="foto14.jpeg">
-<img src="foto15.jpeg">
-<img src="foto16.jpeg">
+<img src="foto1.jpeg" onclick="abrirFoto(this,'Juntas em Lisboa')">
+<img src="foto2.jpeg" onclick="abrirFoto(this,'A primeira festa juntas💕')">
+<img src="foto3.jpeg" onclick="abrirFoto(this,'Uma semana de casadas')">
+<img src="foto4.jpeg" onclick="abrirFoto(this,'Fomos ver o por do sol bue fofas')">
+
+<img src="foto5.jpeg" onclick="abrirFoto(this,'Renatxinha na serra')">
+<img src="foto6.jpeg" onclick="abrirFoto(this,'O buque que me deste')">
+<img src="foto7.jpeg" onclick="abrirFoto(this,'O DIA')">
+<img src="foto8.jpeg" onclick="abrirFoto(this,'Que gatas')">
+
+<img src="foto9.jpeg" onclick="abrirFoto(this,'Que fofas')">
+<img src="foto10.jpeg" onclick="abrirFoto(this,'Eu a ser little spoon')">
+<img src="foto11.jpeg" onclick="abrirFoto(this,'Amo-te')">
+<img src="foto12.jpeg" onclick="abrirFoto(this,'Fofinhas')">
+
+<img src="foto13.jpeg" onclick="abrirFoto(this,'Passagem de Anooooo')">
+<img src="foto14.jpeg" onclick="abrirFoto(this,'Passio fofinho')">
+<img src="foto15.jpeg" onclick="abrirFoto(this,'Amo esta foto')">
+<img src="foto16.jpeg" onclick="abrirFoto(this,'Que venham muitos mais meses juntas ❤️')">
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" onclick="fecharFoto()">
+
+<img id="fotoGrande">
+
+<div id="mensagemFoto"></div>
 
 </div>
 
 <script>
 
+/* DATA DO INICIO */
+
+let inicio = new Date("2025-09-14");
+
+function atualizarContador(){
+
+let agora = new Date();
+let diff = agora - inicio;
+
+let dias = Math.floor(diff/(1000*60*60*24));
+let horas = Math.floor((diff/(1000*60*60))%24);
+let minutos = Math.floor((diff/(1000*60))%60);
+let segundos = Math.floor((diff/1000)%60);
+
+document.getElementById("contador").innerHTML =
+`Estamos juntas há <p><b>${dias} dias ${horas}h ${minutos}m ${segundos}s ❤️</b>`;
+
+}
+
+setInterval(atualizarContador,1000);
+
+/* ABRIR MUSEU */
+
 function abrirMuseu(){
-    document.getElementById("museu").style.display="grid";
+
+document.getElementById("museu").style.display="grid";
+document.getElementById("mensagemMuseu").style.display="block";
+
+criarCoracoes();
+
+}
+
+/* LIGHTBOX FOTO */
+
+function abrirFoto(img,mensagem){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("fotoGrande").src=img.src;
+
+document.getElementById("mensagemFoto").innerText=mensagem;
+
+}
+
+function fecharFoto(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+/* CRIAR ESTRELAS */
+
+function criarEstrelas(){
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(star);
+
+}
+
+}
+
+criarEstrelas();
+
+/* CORAÇÕES */
+
+function criarCoracoes(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},5000);
+
+},300);
+
 }
 
 </script>
