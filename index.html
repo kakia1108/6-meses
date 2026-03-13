@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Arial;
-font-size: 20px;
+font-size: 30px;
 text-align:center;
 background: linear-gradient(135deg, #c57eee, #e3c8f5);
 color:white;
@@ -22,8 +22,8 @@ margin-top:80px;
 
 button{
 margin-top:30px;
-padding:15px 30px;
-font-size:20px;
+padding:20px 40px;
+font-size:30px;
 border:none;
 border-radius:10px;
 background:rgb(200, 116, 255);
@@ -33,28 +33,10 @@ cursor:pointer;
 
 .gallery{
 display:none;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:15px;
 width:80%;
-max-width:1000px; /* limite para ecrãs grandes */
 margin:50px auto;
-}
-
-/* RESPONSIVO PARA TELEMÓVEL */
-@media (max-width: 800px) {
-  .gallery {
-    grid-template-columns:repeat(2,1fr); /* 2 colunas no telemóvel */
-    width:90%;
-    gap:10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .gallery {
-    grid-template-columns:1fr; /* 1 coluna em telemóveis muito pequenos */
-    width:95%;
-    gap:8px;
-  }
 }
 
 .gallery img{
